@@ -25,12 +25,10 @@ RUN mkdir /fog
 
 #Download and Install FOG
 RUN git clone https://github.com/fogproject/fogproject.git fog/ && \
-    cd /fog/bin && \
-    git cd fog/ && \
+    cd /fog/ && \
     git pull && \
     cd bin/ && \
     sudo ./installfog.sh -y
-
 
 #Enable services on Boot
 RUN rc-update add dhcp && \
