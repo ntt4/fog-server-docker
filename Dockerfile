@@ -8,6 +8,7 @@ VOLUME [“/storage”]
 EXPOSE 21 67 68 69 80 111 443 1110 2049 4045 
 
 # Install prerequisites
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 RUN apk update 
 RUN apk upgrade
 
