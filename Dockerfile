@@ -12,7 +12,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 RUN apk update 
 RUN apk upgrade
 
-RUN apk --no-cache add dhcp tftp-hpa nfs-utils ncftp openssl sudo php7 php7-ftp apache2 mariadb mysql  
+RUN apk --no-cache add dhcp tftp-hpa nfs-utils ncftp openssl sudo php7 apache2 mariadb mysql  
 
 # && \update-ca-certificates
 
