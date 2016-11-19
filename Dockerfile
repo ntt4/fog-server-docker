@@ -17,7 +17,7 @@ RUN apk --no-cache add dhcp tftp-hpa nfs-utils ncftp openssl sudo php7 apache2 m
 # && \update-ca-certificates
 
 #Change password on MYSQL root user
-RUN if [“${CONFIRM}” = "true" ]; then mysqladmin -u root password “${MYSQL_PASS}”
+RUN if [“${CONFIRM}” = "true" ]; then mysqladmin -u root password “${MYSQL_PASS}” ; fi
 
 
 #Create FOG Directory
