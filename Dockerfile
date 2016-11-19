@@ -8,8 +8,11 @@ VOLUME [“/storage”]
 EXPOSE 21 67 68 69 80 111 443 1110 2049 4045 
 
 # Install prerequisites
-RUN apk --update --no-cache add dhcp tftp-hpa nfs-utils ncftp sudo php7 php7-ftp apache2 mariadb mysql openssl && \
-    update-ca-certificates
+RUN apk --update 
+
+RUN apk --no-cache add dhcp tftp-hpa nfs-utils ncftp sudo php7 php7-ftp apache2 mariadb mysql openssl 
+
+# && \update-ca-certificates
 
 #Change password on MYSQL root user
 RUN if [“${CONFIRM}” = "true" ]; mysqladmin -u root password “${MYSQL_PASS}”
